@@ -1,1 +1,0 @@
-document.write("<h2>My External Print Method Using JScript</h2>");
