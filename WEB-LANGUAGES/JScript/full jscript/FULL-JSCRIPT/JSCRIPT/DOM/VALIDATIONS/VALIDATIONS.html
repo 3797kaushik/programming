@@ -1,0 +1,53 @@
+<script>
+n = "O'Henry";
+n_pat = /^[a-z.' ]{1,30}$/i;
+
+if(!n_pat.test(n)){
+	document.write("Name Should Have Min 2 Char With Alphabets Allowed")
+}
+
+uname = "harry 14";
+u_pat = /^[a-z0-9 _.@$]{8,12}$/;
+
+if(!u_pat.test(uname)){
+	document.write("Username Should have alphanumeric with ._@$ space allowed");
+}
+
+mob = "9875845847";
+m_pat = /^[7-9][0-9]{9}$/;
+if(!m_pat.test(mob)){
+	document.write("INvalid Mobile No.");
+}
+
+pic = "andi.png";
+i_pat = /\.(jpe?g|png|gif)/i;
+if(!i_pat.test(pic)){
+	document.write("Image should have only .jpg , .jpeg , png or .gif Extensions only");
+}
+
+email = "wowwow@gmail.com";
+e_pat = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,8}$/;
+if(!e_pat.test(email)){
+	document.write("Invalid Email Given");
+}
+
+pwd = 'h4Y$14';
+p_pat = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+if(!p_pat.test(pwd)){
+	document.write("<ul><li>Should have Min 6 and Max 16</li><li>Should have Atleast One Number</li><li>Should have Special Char as !@#$%^&*</li></ul>");
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

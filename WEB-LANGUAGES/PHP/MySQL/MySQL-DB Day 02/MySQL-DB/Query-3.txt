@@ -1,0 +1,133 @@
+CREATE TABLE c_users (
+Id SMALLINT( 5 ) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+Name VARCHAR( 30 ) NOT NULL ,
+EmailId VARCHAR( 50 ) NOT NULL UNIQUE,
+uPassword CHAR( 32 ) NOT NULL ,
+uStatus ENUM( 'Inactive', 'Active' ) NOT NULL ,
+RegisteredOn TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP 
+);
+
+
+ALTER TABLE c_users ADD PhoneNo CHAR( 10 ) NOT NULL AFTER uPassword; 
+
+ALTER TABLE c_users CHANGE Name FullName VARCHAR( 50 )  NOT NULL 
+
+ALTER TABLE c_users  DROP PhoneNo;
+
+ALTER TABLE c_users CHANGE uPassword Pword CHAR( 32 ) NOT NULL 
+
+
+CREATE TABLE users (
+id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(100) NOT NULL,
+salary FLOAT(10,2) NOT NULL,
+birthday DATE NOT NULL
+);
+
+ALTER TABLE users 
+ADD gender ENUM("m","f") DEFAULT "m" NOT NULL AFTER name;
+
+ALTER TABLE users 
+CHANGE birthday dob DATE NOT NULL;
+
+
+ALTER TABLE users DROP gender;
+
+
+ALTER TABLE c_users RENAME TO people;
+
+ALTER TABLE people RENAME users;
+
+INSERT INTO users 
+VALUES
+(1,"John","m",12345,"1962-06-10");
+
+INSERT INTO users 
+
+(name,gender,salary,dob)
+
+VALUES
+
+("Mary","f",14345,"1972-06-10");
+
+
+
+INSERT INTO users 
+(name,gender,salary,dob)
+VALUES
+("Basheer","m",24345,"1974-12-08"),
+("Anil","m",20000,"1971-02-18");
+
+
+
+UPDATE users SET salary = salary+1250;
+
+
+UPDATE users SET salary = salary+255 
+WHERE salary <= 20000;
+
+UPDATE users SET name = "Anil Kumar" 
+WHERE id=4;
+
+
+UPDATE users SET name = "Anil",
+salary=salary-200
+WHERE id=4;
+
+SELECT count(*) FROM users;
+
+
+SELECT name,salary FROM users;
+
+
+
+SELECT CONCAT(name,' - ',salary,' - ',gender) FROM users;
+
+SELECT CONCAT(name,' - ',salary,' - ',gender) AS info FROM users;
+
+
+SELECT md5(name) FROM users;
+
+
+SELECT * FROM users WHERE id = 1;
+
+
+SELECT id,name,salary FROM users WHERE salary< 25000;
+
+
+SELECT * FROM users WHERE gender="m" AND salary>20000
+
+
+
+SELECT * FROM users WHERE name LIKE "a%";
+
+
+SELECT * FROM users WHERE name LIKE "%r";
+
+
+SELECT * FROM users WHERE name LIKE "%_s%";
+
+SELECT * FROM users WHERE name LIKE "%a%";
+
+
+SELECT * FROM users GROUP BY gender;
+
+SELECT * FROM users ORDER BY salary;
+
+
+SELECT * FROM users ORDER BY salary DESC;
+
+
+SELECT * FROM users LIMIT 4;
+
+
+SELECT * FROM users LIMIT 0,4;
+
+
+SELECT * FROM users LIMIT 4,4;
+
+
+SELECT name,salary FROM users
+ WHERE gender = "m" 
+ORDER BY salary DESC 
+LIMIT 3;

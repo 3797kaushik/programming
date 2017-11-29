@@ -1,0 +1,44 @@
+Sessions:
+
+Edit Your PHP.ini OR Keep in Front of U....
+
+Session is a predefined superglobal which is used for maintaining the state of the user between login & logout..
+
+Session data is created and maintained at server machine which is specific to independent user..
+
+--> session.save_path {c://xampp/tmp}
+	The location at which the session data is stored in the server.
+
+--> session.auto_start 	value = OFF
+
+-->	session.name		PHPSESSID
+	
+-->	session.use_cookies	VALUE = ON
+	Usage of cookie for holding the Unique session Id Value at Browsers.....
+	
+--> session.cookie_path=/ Store at Global Path
+
+-->	session.gc_maxlifetime	1440 (app 24 min)
+
+-->	session_start()
+	Starts the session for the user or binds the existing session for the user.
+
+-->	session_name(optional value)
+	sets or gets(the Session name value)
+
+--> session_id() // default...is Static...
+	Returns the Unique Id Value,
+	
+--> session_regenerate_id()
+	changes the session id value with a new value every time you refresh the page.
+
+$_SESSION is a predefined superglobal for accessing Global session Variables
+	
+--> unset :
+	Deletes Variables as well as Global Session Variable Values;
+
+--> session_destroy()
+	Deletes the session id which is set at tmp folder for the user.
+	
+Note : session_start() or session_regenerate_id()
+	This will sends a response header from the program so no output should be sent in the program before their Usage..

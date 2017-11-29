@@ -1,0 +1,49 @@
+body{
+	margin:0px;
+	padding:0px;	
+	background-image:url(../IMAGES/wood1.jpg);
+}
+#header{
+	background:#000;
+	color:#fff;
+	height:85px;
+	font-size:40px;
+	font-family:silent reaction;
+	font-weight:900;
+	letter-spacing:5px;
+	text-align:center;
+	line-height:80px;
+}
+#thumb,#buttons,#main{
+	text-align:center;
+}
+#thumb img{
+	width:200px;
+	height:110px;
+	margin:15px 0px;
+		cursor:pointer;
+}
+#thumb img:hover{
+-moz-transform : scale(1.5);
+-webkit-transform : scale(1.5);
+transform : scale(1.5);
+
+-moz-transition:all 3s ease-in;
+-webkit-transition:all 3s ease-in;
+transition:all 3s ease-in;
+
+	
+}
+#buttons input{
+	font-size:24px;
+	font-family:arial black;
+	background:#000;
+	color:#fff;
+	padding:4px 25px;
+	cursor:pointer;
+}
+#main img{
+	margin:30px auto;
+	width:500px;
+	height:300px;
+}

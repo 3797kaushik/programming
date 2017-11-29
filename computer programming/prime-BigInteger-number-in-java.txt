@@ -1,0 +1,13 @@
+static boolean isPrime(BigInteger num)
+        {
+        BigInteger count=new BigInteger("2");
+        BigInteger com=num.divide(count);
+        while(count.compareTo(com)<0)
+        {
+          //  System.out.println(num+"=====>"+count);
+            if(num.mod(count).compareTo(BigInteger.ZERO)==0){return false;}
+            count=count.add(BigInteger.ONE);
+        }
+        return true;
+    }
+    

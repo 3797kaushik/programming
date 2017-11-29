@@ -1,0 +1,38 @@
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+import java.io.*;
+
+public class first{
+	static void recursive(int l,int r){
+		
+		if(l==r){
+			System.out.println(l);
+			return;
+		}
+		if(l<=0){
+			return;			
+		}
+		System.out.print(l+"  ");		
+		recursive(l+1,r);
+		System.out.print(l+"  ");		
+		
+	}
+	//////////////////////////////////////////////////////////////////
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	  File f1=new File("input-java.txt");
+	  Scanner sc=new Scanner(System.in) ;
+	   PrintStream o = new PrintStream(new File("output-java.txt"));
+	   PrintStream console = System.out;
+        System.setOut(o);		
+	 try{
+	  sc = new Scanner(f1);
+	  }catch(Exception e){}	  
+	/////////////////////////////////////////////////////////////////////////////
+	int a=sc.nextInt();
+	recursive(1,a);
+	
+	////////////////////////////////
+	}
+}

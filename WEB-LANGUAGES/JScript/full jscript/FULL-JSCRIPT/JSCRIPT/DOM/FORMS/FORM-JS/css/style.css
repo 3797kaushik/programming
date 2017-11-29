@@ -1,0 +1,31 @@
+table tr th{background:#ccc;font-family:courier new;font-size:24px;letter-spacing:3px;}
+
+table tr td,input,select,textarea{
+font-family:arial;font-size:22px;
+}
+#eBox{
+	background:#ccc;
+	width:80%;
+	margin:10px auto;
+	
+}
+#eMsg{
+	padding:10px;
+	font-family:courier new;
+	font-weight:900;
+}
+#eHide{
+	text-align:right;
+padding:0px 10px 10px 0px;	
+}
+#eHide a{
+	text-decoration:none;
+	font-family:arial;
+
+}
+#mdyn{
+	color:red;
+	font-size:16px;
+	font-weight:900;
+	
+}

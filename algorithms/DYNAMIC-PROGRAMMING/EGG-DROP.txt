@@ -1,0 +1,71 @@
+import java.lang.*;
+import java.math.*;
+import java.util.*;
+import java.io.*;
+                   ////    ctrl+alt+j
+
+public class first{
+	
+static int max(int a,int b){
+        return a>b?a:b;
+    }
+	static void printArray(int ar[][]){
+		for(int i=0;i<ar.length;i++){
+			for(int j=0;j<ar[i].length;j++){
+				System.out.print(ar[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+    static int eggdrop(int n,int k,int dp[][]){
+        if(k==0 || k==1){
+			dp[n][k]=k;
+            return k;
+        }
+        if(n==1){
+			dp[n][k]=k;
+            return k;
+        }
+        if(dp[n][k]!=-1){
+            return dp[n][k];
+        }
+        int min=Integer.MAX_VALUE,res;
+        for(int i=1;i<=k;i++){
+            res=max(eggdrop(n-1,i-1,dp),eggdrop(n,k-i,dp));
+            if(res<min){
+                min=res;
+            }
+        }
+        dp[n][k]=min+1;
+        return min+1;
+    }
+    
+    
+	//////////////////////////////////////////////////////////////////
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	  Scanner sc=new Scanner(System.in) ;
+				{
+	 File f1=new File("input.txt");
+	   PrintStream o = new PrintStream(new File("output.txt"));
+	   PrintStream console = System.out;
+        System.setOut(o);		
+	     try{
+	    sc = new Scanner(f1);
+	    }catch(Exception e){}	  
+		}
+			int t=sc.nextInt();
+		while(t>0){
+		    int n=sc.nextInt();
+		    int k=sc.nextInt();
+		    int dp[][]=new int[n+1][k+1];
+		    for(int i=0;i<=n;i++){
+		        Arrays.fill(dp[i],-1);
+		    }
+		    eggdrop(n,k,dp);
+			printArray(dp);
+			System.out.println(dp[n][k]);
+		    t--;
+		}
+	}
+}

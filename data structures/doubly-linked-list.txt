@@ -1,0 +1,73 @@
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+import java.io.*;
+                   ////    ctrl+alt+j
+class node{
+	int data;
+	node left;
+	node right;
+}
+public class first{
+	static void displayl(node head){
+		node current=head;
+		if(current==null) return;
+			while(current!=null){
+				System.out.print(current.data+"->");
+				current=current.left;
+			}
+			System.out.println("NULL");
+	}
+	static void displayr(node head){
+		node current=head;
+			while(current.left!=null){
+				current=current.left;
+			}
+			while(current!=null){
+				System.out.print(current.data+"->");
+				current=current.right;
+			}
+			System.out.println("NULL");
+	}
+	static node appendl(node head,int data){
+		node temp=new node();
+		temp.data=data;
+		temp.left=null;
+		temp.right=null;
+		if(head==null){
+			head=temp;
+			return head;
+		}
+		else{
+			node current=head;
+			while(current.left!=null){
+				current=current.left;
+			}
+			current.left=temp;
+			temp.right=current;
+			return head;
+		}
+	}
+	//////////////////////////////////////////////////////////////////
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	  Scanner sc=new Scanner(System.in) ;
+		{
+	 File f1=new File("input.txt");
+	   PrintStream o = new PrintStream(new File("output.txt"));
+	   PrintStream console = System.out;
+        System.setOut(o);		
+	     try{
+	    sc = new Scanner(f1);
+	    }catch(Exception e){}	  
+		}
+		node head=null;
+	   int n=sc.nextInt();
+	   while(n>0){
+		  head= appendl(head,sc.nextInt());
+		   n--;
+	   }
+	   displayl(head);
+	   displayr(head);
+	}
+}

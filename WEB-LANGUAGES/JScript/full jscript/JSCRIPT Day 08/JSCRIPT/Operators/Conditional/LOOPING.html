@@ -1,0 +1,28 @@
+<br><br>
+Enter DOB :
+<script>
+document.write("<select>");
+document.write("<option>Day</option>");
+day = 1;
+while(day<=31){
+	document.write("<option>"+day+"</option>");
+	day++;
+}
+document.write("</select>");
+
+document.write(" - <select>");
+document.write("<option>Month</option>");
+month = 1;
+do{
+	document.write("<option>"+month+"</option>");
+	month++;
+} while(month<=12);
+document.write("</select>");
+
+document.write(" - <select>");
+document.write("<option>Year</option>");
+for(year=2016;year>=1905;year--){
+	document.write("<option>"+year+"</option>");
+}
+document.write("</select>");
+</script>

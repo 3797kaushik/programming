@@ -1,0 +1,91 @@
+JavaScript Regular Expressions
+
+The JavaScript version of regex is a slightly different flavor than the PCRE variety, so I've included those regexes in a separate section.
+All Major Credit Cards
+
+This regular expression will validate all major credit cards: American Express (Amex), Discover, Mastercard, and Visa. Note that it is not quite as precise as its counterpart Perl and PHP regex.
+
+    //All major credit cards JavaScript regex
+    '^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6011[0-9]{12}|3(?:0[0-5]|[68][0-9])[0-9]{11}|3[47][0-9]{13})$'
+
+Alpha-Numeric Characters
+
+Test for alpha-numeric characters with this regexp.
+
+    //JavaScript alpha-numeric characters only
+    '^[a-zA-Z0-9]+$'
+
+Alphabetic Characters
+
+This regex will test for alphabetic characters only (upper and lowercase).
+
+    //JavaScript Alphabetic characters only
+    '^[a-zA-Z]+$'
+
+Canadian Postal Codes
+
+Tests for valid Canadian Postal Codes.
+
+    //JavaScript Canadian Postal Codes
+    '^[ABCEGHJKLMNPRSTVXY][0-9][A-Z][0-9][A-Z][0-9]$'
+
+Date (MM/DD/YYYY)
+
+Validate the calendar date in MM/DD/YYYY format with this regex. Optional separators are spaces, hyphens, forward slashes, and periods. The year is limited between 1900 and 2099.
+
+    //JavaScript Date (MM/DD/YYYY)
+    '^(0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2}$'
+
+Date (YYYY-MM-DD)
+
+Validate the calendar date in YYYY/MM/DD format with this regex. Optional separators are spaces, hyphens, forward slashes, and periods. The year is limited between 1900 and 2099.
+
+    //JavaScript Date (YYYY/MM/DD)
+    '^(19|20)?[0-9]{2}[- -.](0?[1-9]|1[012])[- -.](0?[1-9]|[12][0-9]|3[01])$'
+
+Digits
+
+This regex will test for digits (whole numbers).
+
+    //JavaScript digits only
+    '^[0-9]+$'
+
+Emails
+
+This email regex is not fully RFC5322-compliant, but it will validate most common email address formats correctly.
+
+    //JavaScript email regex
+    '^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$'
+
+Passwords
+
+Test for a strong password with this regex. The password must contain one lowercase letter, one uppercase letter, one number, and be at least 6 characters long.
+
+    //JavaScript Password regex
+    "(?=^.{8,12}$)((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.*"
+
+
+Phone Numbers (North American)
+
+This regex will validate a 10-digit North American telephone number. Separators are not required, but can include spaces, hyphens, or periods. Parentheses around the area code are also optional.
+
+    //JavaScript phone number regex
+    '^(([0-9]{1})*[- .(]*([0-9]{3})[- .)]*[0-9]{3}[- .]*[0-9]{4})+$'
+
+URLs
+
+This URL regex will validate most common URL formats correctly.
+
+    //JavaScript URL regex
+    '^((http|https|ftp)://)?([[a-zA-Z0-9]\-\.])+(\.)([[a-zA-Z0-9]]){2,4}([[a-zA-Z0-9]/+=%&_\.~?\-]*)$'
+
+US ZIP Codes
+
+This regexp verifies US ZIP Codes, with an optional 4 number ZIP code extension.
+
+    //JavaScript US ZIP Codes regex
+    '^[0-9]{5}(?:-[0-9]{4})?$'
+
+Regex Tutorials
+
+While this page doesn't go in depth on how to learn regular expressions, I will point you to some tutorials so that if you need to modify any of the above regexes or create your own, you'll be able to do so.

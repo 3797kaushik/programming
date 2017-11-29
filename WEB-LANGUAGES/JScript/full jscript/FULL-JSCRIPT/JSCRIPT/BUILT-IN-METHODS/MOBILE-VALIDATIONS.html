@@ -1,0 +1,32 @@
+<script>
+	mob = "2a58744587";
+	
+function r(txt){
+	document.write(txt);
+}
+
+r(isValidMobile(mob));
+
+function isValidMobile(val){
+	if(val.length != 10){
+		return "Mobile No Should have 10-Digits";
+	}
+	fc = val.charAt(0);
+	if(fc === '7' || fc === '8' || fc === '9'){
+		return isNumeric(val);
+	} else {
+		return "Mobile No Should Start With 7, 8 & 9 Only";
+	}
+}
+
+function isNumeric(val){
+	for(i=0;i<val.length;i++){
+		isNum = val.charCodeAt(i);
+		if(isNum<48 || isNum>57){
+			return "Mobile No Should have Only Numbers";
+		}
+	}
+	return "Mobile No is Valid";
+	//document.getElementById('dyn').innerHTML = "Mobile No is Valid";
+}
+</script>

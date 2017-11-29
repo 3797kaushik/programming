@@ -1,0 +1,10 @@
+<script>
+function doUpper(){
+	v = document.regForm.fname.value;
+	document.regForm.fname.value = v.toUpperCase();
+	document.regForm.fname.style.color = 'red';
+}
+</script>
+<form name='regForm'>
+Enter Name : <input type='text' name='fname' value='' id='regFname' placeholder='Only Upper Case' onkeyup="javascript:doUpper()"/>
+</form>

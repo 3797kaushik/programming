@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>Forms Concepts in HTML</title>
+<link href='css/style.css' rel='stylesheet' type='text/css'/>
+<script src='js/ext.js' type='text/javascript' language='javascript'></script>
+</head>
+<body>
+<div id='eBox'>
+	<div id='eMsg'>
+	</div>
+	<div id='eHide'>
+	<a href='javascript:doHide();'>Hide Me</a>
+	</div>
+</div>
+<form name='regForm' onsubmit="javascript:return doValidate(this);" onreset="javascript:return doDel();">
+<table border='1' align='center' width='80%' cellpadding='8' cellspacing='0'>
+<thead>
+<tr><th colspan='2'>New User Please Register</th></tr>
+</thead>
+<tbody>
+<tr><td width='30%'>Enter Name</td><td>
+<input type='text' name='fname' value='' placeholder='Use Upper Case' id='regFname'/>
+</td></tr>
+<tr><td>Enter Email</td><td>
+<input type='text' name='email' id='regEmail'/>
+</td></tr>
+<tr><td>DOB</td><td>
+<input type='text' placeholder='YYYY-MM-DD' name='dob' id='regDob'/> <span id='ddyn'></span>
+</td></tr>
+<tr><td>Enter Password</td><td>
+<input type='password' name='pwd' id='regPwd'/>
+</td></tr>
+<tr><td>Confirm Password</td><td>
+<input type='password' name='cpwd' id='regCpwd'/>
+</td></tr>
+<tr><td>Mobile</td><td>
+<input type='text'  name='mob' id='regMob'/>
+<span id='mdyn'></span>
+</td></tr>
+<tr><td>Upload Image</td><td>
+<input type='file' name='pic' id='regPic'/>
+</td></tr>
+</tbody>
+<tfoot>
+<tr><td colspan='2' align='right'>
+<input type='submit' value='Register !' name='submit'/>
+<input type='reset' value='Refresh !' name='cancel'/>
+</td></tr>
+</tfoot>
+</table>
+</form>
+</body>
+</html>
+<pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>

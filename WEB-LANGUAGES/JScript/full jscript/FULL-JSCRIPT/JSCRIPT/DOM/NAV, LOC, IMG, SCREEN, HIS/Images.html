@@ -1,0 +1,20 @@
+<body>
+<h2 style='color:red;text-align:center;border-bottom:3px dashed red;'>Images Concepts</h2>
+<img src='1.jpg' border='1' width='320px' name='img1' id='img_1'/>
+<img src='2.png' border='1' width='320px'  name='img2' id='img_2'/>
+<hr>
+<script>
+	function r(txt){
+		document.write(txt+'<br>');
+	}
+	r('Total Images in this Page = '+document.images.length);
+	r('Through Array = '+document.images[1].width);
+	r('Through Array = '+document.images[1].height);
+	r('Name Of Image = '+document.img1.width);
+	r('Id Of Image = '+document.img_2.height);
+</script>
+<hr>
+<input type='button' name='goback' value='Go Back' onclick="history.back();"/>
+<input type='button' name='goback' value='Previous' onclick="history.go(-1);"/>
+<input type='button' name='goback' value='Main Page' onclick="history.go(-2);"/>
+</body>

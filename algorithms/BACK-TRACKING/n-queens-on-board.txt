@@ -1,0 +1,81 @@
+
+import java.util.*;
+
+
+class TestClass {
+    static void printArray(int ar[][],int n){
+			System.out.println();
+		for(int i=0;i<n;i++){
+			for(int j=0;j<n;j++){
+				System.out.print(ar[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+	
+	static boolean safe(int ar[][],int posi,int posj){
+		int n=ar.length;
+		
+		for(int j=0;j<posi;j++){
+			if(ar[j][posj]==1){
+				return false;
+			}
+		}
+		int i=posi-1,j=posj-1;
+		while(i>=0 && j>=0){
+			if(ar[i][j]==1){
+				return false;
+			}i--;j--;
+		}
+		i=posi-1;j=posj+1;
+		while(i>=0 && j<n){
+			if(ar[i][j]==1){
+				return false;
+			}i--;j++;
+		}
+		return true;
+	}
+	
+	static boolean recursion(int ar[][],int i,int j,int n){
+		if(i>=n ){
+			printArray(ar,n);return true;
+		}
+		else{
+			ar[i][j]=1;
+			
+			if(safe(ar,i,j)){
+				
+			   for(int l=0;l<n;l++){
+			       if( recursion(ar,i+1,l,n))
+				   {return true;}
+			  }
+			  ar[i][j]=0;
+			  return false;
+			}
+			else{
+			ar[i][j]=0;
+			return false;
+			}
+		}			
+	}
+	//////////////////////////////////////////////////////////////////
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	  Scanner sc=new Scanner(System.in) ;
+		
+		int t=1;
+		while(t>0){
+     		int n=sc.nextInt();
+			int ar[][]=new int[n][n];
+			boolean t1=false;
+			for(int i=0;i<n;i++){
+		    	 t1 |= recursion(ar,0,i,n);
+			}
+			if(!t1){
+			    System.out.println("Not possible");
+			}
+	     t--;	
+		}
+		
+	}
+}

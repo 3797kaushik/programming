@@ -1,0 +1,71 @@
+<script type='text/javascript'>
+function validateForm(f){
+	n = f.Name.value;
+	un = f.UserName.value;
+	p = f.Password.value;
+	rp = f.rPassword.value;
+	pic = f.Picture.value;
+	m = f.Mobile.value;
+	error = '';
+	n_pat = /^[a-z]{3,}$/i;
+  if(!n_pat.test(n)){
+		error += "Invalid name <br />";
+	}
+	un_pat = /^[a-z0-9]{3,}$/i;
+	if(!un_pat.test(un)){
+		error += "Invalid user name <br />";
+	}
+
+	if(p.length < 6){
+		error += "Password length >= 6 <br />";
+	}
+	
+	if( p != rp){
+		error += "Password mismatch <br />";
+	}	
+
+	pic_pat = /\.(jpe?g|png|gif)$/i;
+	if(!pic_pat.test(pic)){
+		error += "Only jpg, png, gif images are allowed <br />";
+	}
+
+	m_pat = /^[6-9][0-9]{9}$/;
+	if(!m_pat.test(m)){
+		error += "Invalid mobile no <br />";
+	}
+	if(error == ''){
+		return true;
+	}else{
+		document.getElementById('error-box').style.display = 'block';
+		document.getElementById('error-msg').innerHTML = error;
+		return false;
+	}
+}
+function hideBox(){
+	document.getElementById('error-box').style.display = 'none';
+}
+</script>
+<style type='text/css'>
+	#error-msg{
+		background-color: #ff0;
+		color: #f00;
+	}
+  #error-box{
+		background-color: #ccc;
+		padding: 4px;
+		display: none;
+	}
+</style>
+<div id='error-box'>
+	<div id='error-msg'></div>
+	<a href='javascript: hideBox()'>Hide</a>
+</div>
+<form name='TestForm' onsubmit='javascript: return validateForm(this)' >
+Name: <input type='text' name='Name' /> <br />
+User Name: <input type='text' name='UserName' /> <br />
+Password: <input type='password' name='Password' /> <br />
+Re-type Password: <input type='password' name='rPassword' /> <br />
+Picture: <input type='file' name='Picture' /> <br />
+Mobile: <input type='text' name='Mobile' /> <br />
+<input type='submit' name='Submit' value='Submit' />
+</form>

@@ -1,0 +1,54 @@
+CREATE TABLE users(
+Id SMALLINT(5) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+Name VARCHAR(30) NOT NULL,
+Salary FLOAT(7,2) NOT NULL
+);
+
+INSERT INTO users(Name,Salary) VALUES('Rajesh',7458.8499);
+
+INSERT INTO users(Name,Salary) VALUES('Ajay',8845.1),('Kavitha',45823);
+
+------------- ACCESS DB Using CMD Prompt -------------
+
+open CMP Screen.
+type cd\ [hit Enter]
+type cd xampp\mysql\bin [Hit Enter]
+
+Page Should be : 
+c:\xampp\mysql\bin>mysql -h localhost -u root -p[hit Enter]
+Prompt password : [hit Enter]
+
+you will be at : 
+MariaDB[(none)]>
+
+SHOW DATABASES;
+USE <dbname>;
+
+SHOW TABLES;
+
+EXPLAIN <tbname>;
+DESCRIBE <tbname>;
+DESC <tbname>;
+
+
+CREATE TABLE fbusers(
+Id SMALLINT(5) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+Name VARCHAR(30) NOT NULL,
+Email VARCHAR(70) NOT NULL UNIQUE,
+Mobile CHAR(10) NOT NULL UNIQUE,
+Pword CHAR(32) NOT NULL,
+DOB DATE NOT NULL,
+Gender ENUM('Male','Female') DEFAULT 'Male',
+Language SET('English','Hindi','Telugu') NOT NULL,
+Address TINYTEXT NOT NULL,
+Pic VARCHAR(100) NOT NULL,
+regOn TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+status ENUM('InActive','Active') DEFAULT 'InActive'
+);
+
+INSERT INTO fbusers(Name,Email,Mobile,Pword,DOB,Gender,Language,Address,Pic) VALUES ('Rajesh','raj@gmail.com','9857858485',md5('harrY_14'),'1985-12-11','Male','English,Telugu','Po Box : 54, Ameerpet-Hyd','54WER54WEWWE87R-Andi.jpg');
+
+INSERT INTO fbusers(Name,Email,Mobile,Pword,DOB,Language,Address,Pic) VALUES ('Kavitha','kavi@gmail.com','9997858485',md5('kavi_14'),'1998-12-14','English,Hindi,Telugu','Po Box : 54, Mehdipatnam-Hyd','54ewrwerWEWWE87R-kavi.jpg');
+
+
+

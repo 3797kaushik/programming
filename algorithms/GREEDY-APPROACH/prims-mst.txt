@@ -1,0 +1,78 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+	static int minKey(long key[],int visited[]){
+		long index=Integer.MAX_VALUE;
+        int u=-1;
+		int n=visited.length;
+		for(int i=0;i<n;i++){
+		  if(index>key[i]&& visited[i]==0)
+		  {
+			 index=key[i];
+			 u=i;
+		  }
+		}
+		return u;
+	}
+	
+	static void printArray(int ar[]){
+		for(int i=0;i<ar.length;i++){
+			System.out.print(ar[i]+" ");
+		}
+		System.out.println();
+	}
+	
+	static void prims(long graph[][]){
+		int n=graph.length;
+		long key[]=new long[n];
+		Arrays.fill(key,Integer.MAX_VALUE);
+		key[0]=0;
+		int visited[]=new int[n];
+		for(int i=0;i<n;i++){
+			int u=minKey(key,visited);
+			//parent[u]
+			visited[u]=1;
+			
+			for(int j=0;j<n;j++){
+				if(graph[u][j]!=-1 && visited[j]!=1 && key[j]>graph[u][j])
+				{
+					key[j]=graph[u][j];
+				}
+			}
+          //  printArray(key);
+		}
+		//printArray(visited);
+		//printArray(key);
+		long sum=0;
+		for(int i=0;i<n;i++){
+			sum += key[i];
+		}
+		System.out.println(sum);
+	}
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int e=sc.nextInt();
+        
+        long ar[][]=new long[n][n];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                ar[i][j]=-1;
+            }
+        }
+        
+        for(int i=0;i<e;i++){
+            int u=sc.nextInt();
+            int v=sc.nextInt();
+          long w=sc.nextLong();
+            u--;v--;
+            ar[v][u]=w;
+            ar[u][v]=w;
+        }
+        int s=sc.nextInt();
+        prims(ar);
+    }
+}

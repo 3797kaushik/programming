@@ -1,0 +1,20 @@
+Full Head Top : 
+#templatemo_header_wrapper
+
+Width = 100%
+
+Full Left :
+#templatemo_content
+
+Width = 600px;
+
+Full Right :
+#templatmeo_sidebar
+
+Width = 280px;
+
+Full Main :
+#templatemo_content_wrapper
+
+Width = 920px;
+

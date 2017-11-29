@@ -1,0 +1,53 @@
+Date & Time Function : 
+1) time(): 
+	Returns the current Unix Time Stamp..
+	Time Stamp : - The total Number of seconds completed from (unix Time Constant),
+
+2) mktime(Hours,Minutes,Seconds,Month,Day,Year);
+	Which is make time.
+	Created on mktime(5,30,00,01,01,1970);
+	make the time stamp for the specified Date & time Value,
+	
+3) checkdate(Month,Day,Year);
+	will check the argument date & Return Boolean if the date is valid(true) if invalid Date (false);
+	
+Formatting Characters : 
+
+char -										Description	==> Sample/Value
+
+d(small) - 				date Value with leading 0's (01-31) ==> date("d");
+j(small) - 				date Value without leading 0's (1-31) ==> date("j");
+D(caps) - 				3 letter day Value (Mon - Sun) ==> date("D");
+l(small) - 				Full Day Representation (Monday - Sunday) ==> date("l")
+dS(caps S) - 			date sufix Value(st,nd,rd,th) ==> date("dS");
+t(small) - 				Total number of days in a month (0-31) ==> date("t");
+w(small) - 				weekday value(0(sun)-6(sat)) ==> date("w");
+caps(N) - 				weekday Value (1(Mon)-7(sun)) ==> date("N");
+
+z(small) - 				Total no of Days Completed in a Year(0-365) ==> date("z");
+n(small) - 				Month without Leading O's(1-12) ==>date("n");
+m(small) - 				month with leading 0's(01-12) ==>date("m");
+M(caps) - 				3 letter Month Representation(jan-dec)==>date("M");
+F(caps) - 				Full Month Representation(january - December) ==> date("F");
+y(small) - 				2 letter year Representation ==> date("y");
+Y(caps) - 				4 letter year Representation ==> date("Y");
+
+Time Function:
+
+h(small) - 				(01-12) 12hours format with leading 0's
+g(small) - 				(1-12) 12hours format without leading 0's
+H(Caps) - 				(00-23)24hours format with leading 0's
+G(Caps) - 				(0-23)24hours format without leading 0's
+i(small) - 				Minutes Possible Value range is (0-59).
+s(small) -			  	seconds(0-59);
+a(small) - 				am or pm in lower case
+A(caps) - 				AM OR PM in upper Case..
+
+date_default_timezone_get() : 
+This Function returns Default Timezone Set inside PHP.ini Config File Before Set Function is Used... get will always relay on last set Function.
+
+date_default_timezone_set('arg') : 
+Allows to Change Timezone from One timezone to Another Timezone... Based on Argument Value we Pass..
+
+
+

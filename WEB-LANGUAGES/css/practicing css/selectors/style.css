@@ -1,0 +1,37 @@
+h2{
+   color:blue;
+}
+.a{
+	font-family:courier new;
+	text-align:center;
+	color:black;
+}
+h2.a{
+	letter-spacing:5px;
+	background:gold;
+	width:60%;
+	padding:10px;
+	margin:20px auto;
+}
+#b{
+	color:blue;
+	box-shadow:4px 4px 8px 2px #444;
+	letter-spacing:5px;
+	background:gold;
+	width:66%;
+	padding:10px;
+	margin:20px auto;
+}
+#c{
+	color:blue;
+	box-shadow:4px 4px 8px 2px #444;
+	letter-spacing:5px;
+	background:gold;
+	width:66%;
+	padding:10px;
+	margin:20px auto;
+	border-radius:25px;
+	text-shadow:4px 6px 2px #444;
+	border-left:40px solid black;
+	background:silver;
+}

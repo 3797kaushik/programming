@@ -1,0 +1,15 @@
+<script type='text/javascript'>
+function validate(v){
+	npat = /^[a-z]{3,}$/i;
+	if(!npat.test(v)){
+		document.getElementById('Name').style.backgroundColor = "#ff0";
+		document.getElementById('Name').style.color = "#f00";
+	}else{
+	document.getElementById('Name').style.backgroundColor = "#fff";
+		document.getElementById('Name').style.color = "#0a0";
+	}
+}
+</script>
+<form name='TestForm'>
+<input type='text' name='Name' id='Name' onkeyup='javascript: validate(this.value)' />
+</form>

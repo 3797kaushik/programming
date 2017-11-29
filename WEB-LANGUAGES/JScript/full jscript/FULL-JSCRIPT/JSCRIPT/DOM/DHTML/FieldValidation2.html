@@ -1,0 +1,34 @@
+<script type='text/javascript'>
+function validate(v){
+	npat = /^[a-z]{3,}$/i;
+	if(!npat.test(v)){
+		document.getElementById('Name').className='error';
+	}else{
+		document.getElementById('Name').className='ok';
+	}
+}
+</script>
+<style type='text/css'>
+ .error{
+		color: #f00;
+		background-color: #ff0;
+		border: 1px solid #f00;
+		background-image: url(images/cross.png);
+		background-repeat: no-repeat;
+		background-position: center right;
+		padding-right: 16px;
+ }
+ .ok{
+		color: #0a0;
+		background-color: #fff;
+		border: 1px solid #0a0;
+		background-image: url(images/tick.png);
+		background-repeat: no-repeat;
+		background-position: center right;
+		padding-right: 16px;
+ }
+
+</style>
+<form name='TestForm'>
+<input type='text' name='Name' id='Name' onkeyup='javascript: validate(this.value)' />
+</form>

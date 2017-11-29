@@ -1,0 +1,44 @@
+<title>Multi Dimensional Arrays in JScript</title>
+<script>
+c = [[1,'Rajesh',[74,85,96,87,86,48]],[2,'Sunil',[48,68,78,89,85,57]],[3,'Kavitha',[84,86,59,57,87,89]],[4,'Ajay',[12,14,10,21,16,31]],[5,'Kiran',[14,42,15,31,25,21]]];
+document.write("<table align='center' border='1' width='98%' cellpadding='6' cellspacing='0'>");
+document.write("<tr><th colspan='11'>List of Student Mark Sheet</th></tr>");
+document.write("<tr><td rowspan='2'>Sno</td><td rowspan='2'>Student Name</td><th colspan='6'>Subject Marks</th><td rowspan='2'>Total</td><td rowspan='2'>Perc</td><td rowspan='2'>PASS/FAIL</td></tr>");
+document.write("<tr><td>Eng</td><td>Hin</td><td>Tel</td><td>Math</td><td>Sci</td><td>Soc</td></tr>");
+for(i=0;i<c.length;i++){
+	document.write("<tr>");
+	
+	for(j=0;j<2;j++){
+	document.write("<td>"+c[i][j]+"</td>");
+	}
+	
+	for(k=0;k<c[i][j].length;k++){
+		document.write("<td>"+c[i][j][k]+"</td>");
+	}
+	
+	tot = eval(c[i][j].join('+'));
+	document.write("<td>"+tot+"</td>");
+	
+	perc = Math.round(tot/6);
+	document.write("<td>"+perc+"</td>");
+	
+	status = (perc>45)?"<b>Pass</b>":"<b style='color:red;'>Fail</b>";
+	document.write("<td>"+status+"</td>");
+	document.write("</tr>");
+}
+document.write("</table>");
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>

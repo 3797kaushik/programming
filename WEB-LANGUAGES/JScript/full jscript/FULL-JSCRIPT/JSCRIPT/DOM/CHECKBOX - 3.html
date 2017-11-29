@@ -1,0 +1,35 @@
+<style>
+
+</style>
+<script>
+function sALL(){	
+	len = document.regForm.elements.length;
+	for(i=0;i<len;i++){
+		elt = document.regForm.elements[i];
+		if(elt.type == 'checkbox' && elt.name == 'course'){
+			elt.checked = true;
+		}	
+	}
+}
+function sNONE(){	
+	len = document.regForm.elements.length;
+	for(i=0;i<len;i++){
+		elt = document.regForm.elements[i];
+		if(elt.type == 'checkbox' && elt.name == 'course'){
+			elt.checked = false;
+		}	
+	}
+}
+</script>
+<form name='regForm'><br><br><b>
+<a href='javascript:sALL();'>Select All</a> | <a href='javascript:sNONE();'>Select None</a> | Select Even | Select Odd</b><br><br>
+<input type='checkbox' name='course' value='c'/> C - Language.<br>
+<input type='checkbox' name='course' value='h'/> HTML & HTML 5.<br>
+<input type='checkbox' name='course' value='s'/> CSS & CSS 3.<br>
+<input type='checkbox' name='course' value='j'/> JAVASCRIPT.<br>
+<input type='checkbox' name='course' value='d'/> DRUPAL.<br>
+<input type='checkbox' name='course' value='w'/> WORDPRESS.<br>
+<input type='checkbox' name='course' value='p'/> PHP.
+<br><br>
+
+</form>

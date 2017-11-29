@@ -1,0 +1,80 @@
+import java.util.*;
+import java.io.*;
+class Node{
+    Node left,right;
+    int data;
+    Node(int data){
+        this.data=data;
+        left=right=null;
+    }
+}
+class Solution{
+static void traverseTree(Node root,int level)
+    {
+    if(root==null)
+        {
+        return;
+    }
+    if(level==1)
+        {
+        System.out.print(root.data+" ");
+    }
+    else
+        {
+        traverseTree(root.left, level-1);
+        traverseTree(root.right, level-1);
+    }
+}
+static void levelOrder(Node root){
+      //Write your code here
+    int j=height(root);
+      for(int i=0;i<=j;i++)
+          {
+          traverseTree(root,i);
+      }
+}
+//////////////////////////////////////////////////////
+static int max(int a,int b)
+    {
+    return a>b?a:b;
+}
+/////////////////////////////////////////////////////////////
+static int height(Node root)
+    {
+    if(root==null)
+        {
+        return 0;
+    }
+    else
+        {
+        return max(height(root.left),height(root.right))+1;
+    }
+}
+public static Node insert(Node root,int data){
+        if(root==null){
+            return new Node(data);
+        }
+        else{
+            Node cur;
+            if(data<=root.data){
+                cur=insert(root.left,data);
+                root.left=cur;
+            }
+            else{
+                cur=insert(root.right,data);
+                root.right=cur;
+            }
+            return root;
+        }
+    }
+    public static void main(String args[]){
+            Scanner sc=new Scanner(System.in);
+            int T=sc.nextInt();
+            Node root=null;
+            while(T-->0){
+                int data=sc.nextInt();
+                root=insert(root,data);
+            }
+            levelOrder(root);
+        }	
+}

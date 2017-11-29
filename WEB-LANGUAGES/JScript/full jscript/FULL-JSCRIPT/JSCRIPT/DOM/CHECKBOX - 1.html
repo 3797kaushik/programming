@@ -1,0 +1,26 @@
+<style>
+
+</style>
+<script>
+function doCount(){
+	courseCount = 0;
+	for(i=0;i<5;i++){
+		if(document.regForm.course[i].checked){
+			courseCount++;
+		}
+	}
+	if(courseCount<2){
+		alert('Min 2 Courses Required.');
+	}
+}
+</script>
+<form name='regForm'>
+<strong><u>Min 2 Courses Required</u> </strong> <span style='color:red;'>*</span><br><br>
+<input type='checkbox' name='course' value='c'/> C - Language.
+<input type='checkbox' name='course' value='h'/> HTML & HTML 5.
+<input type='checkbox' name='course' value='s'/> CSS & CSS 3.
+<input type='checkbox' name='course' value='j'/> JAVASCRIPT.
+<input type='checkbox' name='course' value='p'/> PHP.
+<br><br>
+<input type='button' onclick="javascript:doCount();" name='validate' value='Validate !'/>
+</form>

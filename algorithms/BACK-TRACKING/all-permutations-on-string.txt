@@ -1,0 +1,52 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+    
+    static ArrayList<String> al;
+	static void recursive(String a,int l,int r)
+	{
+			//	System.out.println(":");
+			if(l>r){
+				return;
+			}
+		if(l==r){
+			//System.out.print(a+" ");
+			al.add(a);
+			return;
+		}
+		else{
+			for(int i=l;i<=r;i++){
+				char ch[]=a.toCharArray();
+				char temp=ch[l];
+				ch[l]=ch[i];
+				ch[i]=temp;
+				recursive(new String(ch),l+1,r);
+				temp=ch[l];
+				ch[l]=ch[i];
+				ch[i]=temp;
+			}
+		}
+	}
+	public static void main (String[] args) {
+		//code
+		Scanner sc=new Scanner(System.in);
+		al=new ArrayList<String>();
+	 int a=sc.nextInt();
+	 while(a>0){
+		 String b=sc.next();
+		 char h[]=b.toCharArray();
+		 Arrays.sort(h);
+		 b=new String(h);
+		 recursive(b,0,b.length()-1);
+		 Collections.sort(al);
+		 for(int i=0;i<al.size();i++){
+		     System.out.print(al.get(i)+" ");
+		 }
+		 a--;
+		 al.clear();
+		 System.out.println();
+	 }
+	}
+}

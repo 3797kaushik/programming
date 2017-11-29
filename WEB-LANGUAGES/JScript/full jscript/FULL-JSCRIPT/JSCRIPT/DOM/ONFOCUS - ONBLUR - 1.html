@@ -1,0 +1,21 @@
+<style>
+
+</style>
+<script>
+function clearTXT(){
+	if(document.regForm.search.value == 'Enter Search'){
+		document.regForm.search.value = '';
+	}
+}
+function showTXT(){
+	if(document.regForm.search.value == ''){
+		document.regForm.search.value = 'Enter Search';
+	}
+}
+</script>
+<form name='regForm'><br><br>
+Enter Keyword : <input type='text' name='search' value='Enter Search' onfocus="clearTXT();" onblur="showTXT()"/>
+
+
+
+</form>

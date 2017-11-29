@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>FUNCTIONS in JScript</title>
+<link href='../style.css' type='text/css' rel='stylesheet'/>
+<style>
+#r{
+float:right;
+}
+#e{
+float:right;
+color:red;
+}
+</style>
+</head>
+<body>
+<h1>With Arg & Without Return Functions in JScript</h1><div>
+<script>
+function test(name){
+		document.write('Welcome <b>'+name+' !</b>');
+	}
+
+
+function loggedIn(type,message){
+ document.write("<div id='"+type+"'>"+message+"</div>");
+}
+
+
+email = 'raj@gmail.com';
+pwd = 'harrY_14';
+if(email == 'raj@gmail.com' && pwd == 'harrY_14'){
+ loggedIn('r','Welcome to Logged In Page.');
+ test('Rajesh');
+} else {
+ loggedIn('e','Invalid Log In Details.');
+}
+
+</script>
+</body>
+</html>
+<pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>

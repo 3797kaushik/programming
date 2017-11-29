@@ -1,0 +1,26 @@
+<html>
+<head>
+<link href='CSS/style.css' type='text/css' rel='stylesheet'/>
+<script src='JS/ext.js' type='text/javascript' language='javascript'></script>
+</head>
+<body>
+<div id='header'>Image Gallery Slide Show</div>
+<div id='thumb'>
+<img src='IMAGES/1.jpg' onclick="doChange('b',this.src);"/>
+
+<img src='IMAGES/2.jpg' ondblclick="doChange('b',this.src);"/>
+
+<img src='IMAGES/3.jpg' onmouseover="doChange('b',this.src);"/>
+
+<img src='IMAGES/4.jpg' onmouseout="doChange('b',this.src);"/>
+</div>
+<div id='buttons'>
+<input type='button' value='Zoom In' name='zoom' onclick="zoom('b','+');"/>
+<input type='button' value='Normal' name='zoom' onclick="zoom('b','0');"/>
+<input type='button' value='Zoom Out' name='zoom' onclick="zoom('b','-');"/>
+</div>
+<div id='main'>
+<img src='IMAGES/4.jpg' id='b'/>
+</div>
+</body>
+</html>

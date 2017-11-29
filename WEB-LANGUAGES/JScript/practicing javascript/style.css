@@ -1,0 +1,14 @@
+h1{
+	
+	color:red;
+	border-bottom: 3px dashed red;
+}
+div
+{
+	font-family:courier new;
+	padding-left:50px;
+	color:blue;
+	letter-spacing:2px;
+	line-height:40px;
+	font-size:22px;
+}

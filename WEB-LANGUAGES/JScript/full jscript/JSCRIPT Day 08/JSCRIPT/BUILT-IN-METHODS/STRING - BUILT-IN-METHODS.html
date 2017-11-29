@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>STRING - BUILT-IN-METHODS in JScript</title>
+<link href='../style.css' type='text/css' rel='stylesheet'/>
+</head>
+<body>
+<h1>Normal String Methods in JScript</h1><div>
+<script>
+function r(txt){
+	document.write(txt+'<br>');
+}
+var str = 'sathya iNstitute';
+r('Original String = <b>'+str+'</b>');
+r('Length of Given String = <b>'+str.length+'</b>');
+r('Upper Case = <b>'+str.toUpperCase()+'</b>');
+r('Lower Case = <b>'+str.toLowerCase()+'</b>');
+r('Bold = '+str.bold());
+r('Italics = '+str.italics());
+r('Big = '+str.big());
+r('Small = '+str.small());
+r('sup = '+str.sup());
+r('sub = '+str.sub());
+r('Font Color = '+str.fontcolor('blue'));
+
+document.write('</div><h1>Slice( start , stop ) Extract Given String</h1><div>');
+r('Original String = <b>'+str+'</b>');
+r('slice(0) = '+str.slice(0));
+r('slice(4) = '+str.slice(4));
+r('slice(4,7) = '+str.slice(4,7));
+r('slice(4,2) = '+str.slice(4,2)); // Blank
+r('slice(-9) = '+str.slice(-9));
+r('slice(-9,8) = '+str.slice(-9,8));
+r('slice(-9,-3) = '+str.slice(-9,-3));
+
+document.write('</div><h1>Substring( start , stop ) Extract Given String</h1><div>');
+r('Original String = <b>'+str+'</b>');
+r('substring(0) = '+str.substring(0));
+r('substring(4) = '+str.substring(4));
+r('substring(4,7) = '+str.substring(4,7));
+r('substring(4,2) = '+str.substring(4,2));
+r('substring(-9) = '+str.substring(-9));
+r('substring(-9,8) = '+str.substring(-9,8));
+r('substring(-9,-3) = '+str.substring(-9,-3));
+
+document.write('</div><h1>Substr( start , stop ) Extract Given String</h1><div>');
+r('Original String = <b>'+str+'</b>');
+r('substr(0) = '+str.substr(0));
+r('substr(4) = '+str.substr(4));
+r('substr(4,7) = '+str.substr(4,7));
+r('substr(4,2) = '+str.substr(4,2));
+r('substr(-9) = '+str.substr(-9));
+r('substr(-9,8) = '+str.substr(-9,8));
+r('substr(-9,-3) = '+str.substr(-9,-3));
+
+document.write('</div><h1>indexOf(needle, pos+1) & lastIndexOf(needle)</h1><div>');
+email = "kavi@gmail.com";
+r('Original String = <b>'+str+'</b>');
+r('First t is at = '+str.indexOf('t'));
+r('Middle t is at = '+str.indexOf('t',3));
+r('Middle t is at = '+str.indexOf('t',11));
+r('Last t is at = '+str.lastIndexOf('t'));
+r('iNs = '+str.indexOf('iNs'));
+r('ins = '+str.indexOf('ins'));
+
+if(email.indexOf('@gmail.com') == -1){
+	r('Sorry ... Only Gmail Emails Allowed');
+}
+
+document.write('</div><h1>charAt(pos) & charCodeAt(pos)</h1><div>');
+r('Original String = <b>'+str+'</b>');
+r('charAt(0) Pos = '+str.charAt(0));
+r('charCodeAt(0) Pos = '+str.charCodeAt(1));
+
+document.write('</div><h1>search(needle) & match(needle)</h1><div>');
+r('Original String = <b>'+str+'</b>');
+r('Search t = '+str.search('t'));
+r('Search iNs = '+str.search('iNs'));
+r('Search ins = '+str.search('ins')+'<hr>');
+
+r('Match t = '+str.match('t'));
+r('Match iNs = '+str.match('iNs'));
+r('Match ins = '+str.match('ins')+'<hr>');
+</script>
+</body>
+</html>
+<pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>

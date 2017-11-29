@@ -1,0 +1,57 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    static boolean fun(ArrayList<Integer> al,int n,int p){
+        
+        for(int i=0;i<n;i++){
+            int sum=p-al.get(i);
+            int l=0;
+            int r=n-1;
+            while(l<r){
+                if(l==i){
+                    l++;
+                    continue;
+                }
+                if(r==i){
+                    r--;continue;
+                }
+                if(al.get(l)+al.get(r)<sum){
+                    l++;
+                }
+                else if(al.get(l)+al.get(r)==sum){
+                    return true;
+                }
+                else{
+                    r--;
+                }
+            }
+        }
+        return false;
+    }
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t>0){
+            int n=sc.nextInt();
+            ArrayList<Integer> al =new ArrayList<Integer>();
+            int i=0;
+            while(i<n){
+                al.add(sc.nextInt());
+                i++;
+            }
+            int p=sc.nextInt();
+            Collections.sort(al);
+            boolean check=fun(al,n,p);
+            
+            if(check){
+                System.out.println("YES");
+            }
+            else{
+                System.out.println("NO");
+            }
+            t--;
+        }
+    }
+}

@@ -1,0 +1,152 @@
+CREATE TABLE eg_user(
+  Id SMALLINT(5) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  EmailId VARCHAR(100) NOT NULL UNIQUE,
+  Pword CHAR(32) NOT NULL,
+  Gender ENUM('Male', 'Female') NOT NULL,
+  DateOfBirth DATE NOT NULL,
+  RegisteredOn TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  uStatus ENUM('Inactive', 'Active') NOT NULL
+)
+
+DESC eg_user;
+DESCRIBE eg_user;
+EXPLAIN eg_user;
+
+//inserting record 
+INSERT INTO eg_user
+(EmailId, Pword, Gender, DateOfBirth)
+VALUES
+('mra@xyz.com', MD5('abc'), 'Male', '12-12-1980');
+
+//list all records of table
+SELECT * FROM table_name
+
+//inserting multiple records
+INSERT INTO eg_user
+(EmailId, Pword, DateOfBirth, Gender)
+VALUES
+('mrb@xyz.com', MD5('1'), '1979-10-19', 'Male'),
+('msc@xyz.com',MD5('a'), '1980-5-12', 'Female'),
+('mrd@xyz.com',MD5('ab'), '1972-6-10', 'Male'),
+('mse@xyz.com', MD5('AB'), '1989-12-12', 'Female');
+
+
+//modifying the record
+
+UPDATE eg_user SET DateOfBirth='1980-12-8', uStatus='Active' WHERE Id=1
+----------------
+
+DELETE FROM eg_user WHERE Id=5;
+
+TRUNCATE TABLE tbl_name;
+
+//create emp table
+CREATE TABLE eg_emp(
+Id SMALLINT(5) UNSIGNED PRIMARY KEY AUTO_INCREMENT, 
+Name VARCHAR(30) NOT NULL,
+Salary DECIMAL(10,2) NOT NULL,
+Location VARCHAR(50) NOT NULL) AUTO_INCREMENT=101;
+
+//INSERTING RECORDS
+
+INSERT INTO eg_emp
+(Name, Salary, Location)
+VALUES
+('Mr. A', 5000.4854, 'Hyd'),
+('Mr. B', 4500, 'Mumbai'),
+('Ms. C', 6000, 'Delhi'),
+('Mr. D', 7000, 'Delhi'),
+('Mr. B', 5000, 'Hyd'),
+('Ms. E', 3000, 'Hyd');
+
+// Read All Records...
+SELECT * FROM eg_emp;
+//read records for only specified columns Name, location
+SELECT Name, Location FROM eg_emp;
+
+//list emps with salaries < 5000
+SELECT * FROM eg_emp WHERE Salary<=5000;
+
+//list emps whose salary is either 3000, 5000, 4000, 7000
+
+SELECT * FROM eg_emp WHERE
+Salary=3000 OR Salary=5000 OR Salary=4000 OR Salary=7000
+
+SELECT * FROM eg_emp WHERE 
+Salary IN(3000,5000,4000,7000)
+
+//list emps whose salaries are between 5000 & 8000
+SELECT * FROM eg_emp WHERE Salary>=5000 AND Salary<=8000;
+
+
+SELECT * FROM eg_emp WHERE 
+Salary BETWEEN 5000 AND 8000;
+
+//list users born between 1-1-1970 and 31-12-1980
+SELECT EmailId, DateOfBirth, Gender
+FROM eg_user WHERE
+DateOfBirth BETWEEN '1970-1-1' AND '1980-12-31';
+
+SELECT CURRENT_DATE;
+
+SELECT CURRENT_TIME;
+
+SELECT MONTH(CURRENT_DATE)
+
+SELECT MONTHNAME(CURRENT_DATE);
+
+SELECT WEEKDAY(CURRENT_DATE) (0 - Mon & 6 - Sun)
+
+SELECT DAY(CURRENT_DATE)
+
+SELECT DAYNAME(CURRENT_DATE)
+
+SELECT EmailId, DateOfBirth
+FROM eg_user
+WHERE
+MONTH(DateOfBirth) = 12;
+
+SELECT COUNT(Id) FROM eg_user;
+
+SELECT SUM(Salary) FROM eg_emp;
+
+SELECT SUM(Salary) FROM eg_emp
+WHERE Location='Hyd';
+
+SELECT MAX(Salary) As maxSalary FROM eg_emp;
+
+ SELECT MIN(Salary) LeastSalary
+ FROM eg_emp;
+
+//no. of emps for every location
+SELECT COUNT(*) TotalEmps, Location
+FROM eg_emp
+GROUP BY Location;
+
+---------------
+//no. of emps for every location with salary > 4000
+SELECT COUNT(*) TotalEmps, Location
+FROM eg_emp
+WHERE Salary>4000
+GROUP BY Location;
+
+//list of locations with 2 or more emps having salary>4000
+SELECT COUNT(*) TotalEmps, Location
+FROM eg_emp
+WHERE Salary>4000
+GROUP BY Location
+HAVING TotalEmps>1;
+
+//Salary in descending order
+SELECT * FROM eg_emp
+ORDER BY Salary DESC;
+
+//Salary in desc, with Id desc
+SELECT * FROM eg_emp
+ORDER BY Salary DESC,
+Id DESC;
+
+//list second highest earner 
+SELECT * FROM eg_emp
+ORDER BY Salary DESC
+LIMIT 1,1;

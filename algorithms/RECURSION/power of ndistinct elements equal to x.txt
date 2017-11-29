@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+						/// The power SUM
+public class Solution {
+
+    static int count=0;
+    static void recursion(int x,int num,int n,String a){
+        if(x<0){
+            return;
+        }
+        if(x==0){
+            count++;
+            //System.out.println(a);
+            return;
+        }
+        int i=num+1;
+        while(true){
+            String b=a+"->"+i;
+            if((int)Math.pow(i,n)>x){
+                return;
+            }
+             recursion(x-(int)Math.pow(i,n),i,n,b);
+            i++;
+        }
+    }
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+           Scanner sc=new Scanner(System.in);
+    int x=0,n=0;
+    x=sc.nextInt();
+    n=sc.nextInt();
+    
+    //int loop=n;
+        String s="";
+    recursion(x,0,n,s);
+    System.out.println(count);
+    }
+}

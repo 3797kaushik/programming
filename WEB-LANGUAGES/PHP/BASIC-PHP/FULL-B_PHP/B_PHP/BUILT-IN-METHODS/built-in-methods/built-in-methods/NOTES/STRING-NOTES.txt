@@ -1,0 +1,148 @@
+String Built in Functions :
+
+strlen(string $haystack) :  Returns the length of the given string.
+------------------------------------
+strtoupper : Returns $str with all alphabetic characters converted to uppercase.
+Note that 'alphabetic' is determined by the current locale. For instance, in the default "C" locale characters such as umlaut-a (ä) will not be converted.
+declaration of strtoupper
+string strtoupper ( string $str )
+------------------------------------
+strtolower : Returns $str with all alphabetic characters converted to uppercase.
+Note that 'alphabetic' is determined by the current locale. For instance, in the default "C" locale characters such as umlaut-a (ä) will not be converted.
+declaration of strtoupper
+string strtoupper ( string $str )
+------------------------------------
+ucfirst :Returns a string with the first character of $str capitalized, if that character is alphabetic.
+Note that "alphabetic" is determined by the current locale. For instance, in the default "C" locale characters such as umlaut-a (ä) will not be converted.
+declaration of ucfirst
+string ucfirst ( string $str )
+------------------------------------
+ucwords : Returns a string with the first character of each word in $str capitalized, if that character is alphabetic.
+The definition of a word is any string of characters that is immediately after a whitespace (These are: space, form-feed, newline, carriage return, horizontal tab, and vertical tab).
+declaration of ucwords
+string ucwords ( string $str )
+------------------------------------
+strpos : Returns the numeric position of the first occurrence of $needle in the $haystack string. Unlike the strrpos() before PHP 5, this function can take a full string as the $needle parameter and the entire string will be used.
+	declaration of strpos
+
+strpos ( string $haystack, string $needle)
+------------------------------------
+strrpos : Returns the numeric position of the last occurrence of $needle in the $haystack string. Note that the $needle in this case can only be a single character in PHP 4. If a string is passed as the $needle, then only the first character of that string will be used.
+
+If $needle is not found, strrpos() returns FALSE.
+declaration of strrpos
+
+strrpos ( string $haystack , string $needle )
+------------------------------------
+stripos : Returns the numeric position of the first occurrence of $needle in the $haystack string. Unlike strpos(), stripos() is case-insensitive.
+declaration of stripos
+
+stripos ( string $haystack , string $needle )
+------------------------------------
+strripos : Find position of last occurrence of $needle in the case-insensitive string $haystack. Unlike strrpos(), strripos() is case-insensitive.
+declaration of strripos
+
+strripos ( string $haystack , string $needle )
+------------------------------------
+strstr : Returns part of $haystack string from the first occurrence of $needle to the end of $haystack.
+declaration of strstr
+string strstr ( string $haystack , mixed $needle [, bool $before_needle ] )
+------------------------------------
+stristr : Returns all of $haystack from the first occurrence of $needle to the end. The search is not case sensitive.
+declaration of stristr
+string stristr ( string $haystack , mixed $needle [, bool $before_needle ] )
+------------------------------------
+substr : Returns the portion of string specified by the $start and $length parameters.
+If $start is non-negative, the returned string will start at the $start'th position in $string, counting from zero. For instance, in the string 'abcdef', the character at position 0 is 'a', the character at position 2 is 'c', and so forth.
+declaration of substr
+string substr ( string $string , int $start [, int $length ] )
+------------------------------------
+str_replace : This function returns a string or an array with all occurrences of $search in $subject replaced with the given $replace value.
+If you don't need fancy replacing rules (like regular expressions), you should always use this function instead of ereg_replace() or preg_replace().
+declaration of str_replace
+string str_replace ( mixed $search , mixed $replace , mixed $subject [, int &$count ] )
+------------------------------------
+str_ireplace : This function returns a string or an array with all occurrences of $search in $subject replaced with the given $replace value with case insensitive.
+declaration of str_replace
+string str_ireplace ( mixed $search , mixed $replace , mixed $subject [, int &$count ] )
+------------------------------------
+strrev : This Function returns a string in reverse method..
+declaration of strrev
+string strrev (string $haystack);
+------------------------------------
+addslashes : Returns a string with backslashes before characters that need to be quoted in database queries etc. These characters are single quote ('), double quote ("), backslash (\) and NUL (the NULL byte).
+declaration of addslashes
+string addslashes ( string $string )
+------------------------------------
+stripslashes : Removes a string with backslashes before characters that been quoted in database queries or a string.
+declaration of addslashes
+string stripslashes ( string $string )
+------------------------------------
+strip_tags : Removes all html Tags in the Given string.
+string strip_tags ( string $string )
+------------------------------------
+str_shuffle : Randomly shuffles a string
+declaration of str_shuffle
+string str_shuffle ( string $str )
+------------------------------------
+str_repeat : str_repeat — Repeat a string
+declaration of str_repeat
+string str_repeat ( string $input , int $multiplier )
+------------------------------------
+nl2br : Inserts HTML line breaks before all newlines in a string.
+declaration of nl2br
+ string nl2br ( string $string [, bool $is_xhtml = true ] )
+------------------------------------
+MD5 : Calculates the MD5 hash of $string using the « RSA Data Security, Inc. MD5 Message-Digest Algorithm » and returns that hash. The MD5 code returns always a string of 32 characters. Every char is given as the hexadecimal equivalent of the calculated MD5 value.
+declaration of MD5
+string md5 ( string $filename [, bool $raw_output = false ] )
+ raw_output 
+ When TRUE, returns the digest in raw binary format with a length of 16.
+------------------------------------
+sha1 : Calculates the sha1 hash of $str using the « US Secure Hash Algorithm 1 ». The sha1 code returns always a string of 40 characters. Every char is given as the hexadecimal equivalent of the calculated sha1 value.
+declaration of sha1
+ string sha1 ( string $str [, bool $raw_output = false ] )
+  raw_output 
+  If the optional raw_output is set to TRUE, then the sha1 digest is instead returned in raw binary format with a length of 20, otherwise the returned value is a 40-character hexadecimal number.
+------------------------------------
+crypt : This function will return an encrypted string using the standard Unix DES-based encryption algorithm or alternative algorithms that may be available on the system.
+If no Salt-Argument is given, PHP randomly generates a new one with every use of the function.
+To generate a .htpasswd password, simple copy your password in $str and click on "run". The parameter $salt must not be filled. Now copy the generated password in your .htpasswd file with a : as separator to the username in a new line (username:password).
+string crypt ( string $str [, string $salt ] )
+------------------------------------
+base64_encode : Decodes a string ($data) encoded with base64_encode().
+declaration of base64_decode
+string base64_decode ( string $data )
+------------------------------------
+base64_decode : Decodes a string ($data) encoded with base64_encode().
+declaration of base64_decode
+string base64_decode ( string $data )
+------------------------------------
+urlencode : This function is convenient when encoding a string to be used in a query part of a URL, as a convenient way to pass variables to the next page.
+declaration of urlencode
+string urlencode ( string $str )
+------------------------------------
+urldecode : Decodes any %## encoding in the given string $str. The string could be encoded with the function urlencode().
+declaration of urldecode
+string urldecode ( string $str )
+------------------------------------
+ltrim : Strip whitespace (or other characters) from the beginning of a string
+ string ltrim ( string $str [, string $charlist ] )
+------------------------------------
+rtrim : Strip whitespace (or other characters) from the end of a string
+ string rtrim ( string $str [, string $charlist ] )
+------------------------------------
+trim : This function returns a string with whitespace stripped from the beginning and end of $str. Without the second parameter, trim() will strip these characters:
+declaration of trim
+string trim ( string $str [, string $charlist ] )
+------------------------------------
+explode : Returns an array of strings, each of which is a substring of $string formed by splitting it on boundaries formed by the string $delimiter.
+declaration of explode
+array explode ( string $delimiter , string $string [, int $limit ] )
+------------------------------------
+implode : Join array elements with a $glue string.
+declaration of implode
+string implode ( string $glue , array $pieces )
+------------------------------------
+wordwrap : Wraps a string to a given number of characters using a string break character.
+ string wordwrap ( string $str [, int $width = 75 [, string $break = "\n" [, bool $cut = false ]]] )

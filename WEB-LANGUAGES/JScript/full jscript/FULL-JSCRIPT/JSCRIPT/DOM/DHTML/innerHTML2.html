@@ -1,0 +1,10 @@
+<script type='text/javascript'>
+function showText(v){
+	if(v.length < 3){
+		document.getElementById('msg').innerHTML = 'should have min. 3 chars';
+	}else{
+	document.getElementById('msg').innerHTML ='';
+	}
+}
+</script>
+<input type='text' name='Name' id='Name' onkeyup='javascript: showText(this.value)' /><span id='msg'></span>

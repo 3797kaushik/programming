@@ -1,0 +1,43 @@
+<style>
+
+</style>
+<script>
+function doCount(){
+// tcC - Total Course Count
+// tgC - Total Gender Count
+	tcC = 0; tgC = 0;
+	
+	len = document.regForm.elements.length;
+	for(i=0;i<len;i++){
+		elt = document.regForm.elements[i];
+		if(elt.type == 'checkbox' && elt.name == 'course' && elt.checked){
+			tcC++;
+		}
+		if(elt.type == 'radio' && elt.name == 'gend' && elt.checked){
+			tgC++;
+		}
+	}
+	if(tcC<3){
+		alert("Min 3 Courses Required, But Selected Only : "+tcC);
+	}
+	if(tgC == 0){
+		alert('Gender Not Selected');
+	}
+	
+}
+</script>
+<form name='regForm'>
+<strong><u>Min 3 Courses Required</u> </strong> <span style='color:red;'>*</span><br><br>
+<input type='checkbox' name='course' value='c'/> C - Language.
+<input type='checkbox' name='course' value='h'/> HTML & HTML 5.
+<input type='checkbox' name='course' value='s'/> CSS & CSS 3.
+<input type='checkbox' name='course' value='j'/> JAVASCRIPT.
+<input type='checkbox' name='course' value='d'/> DRUPAL.
+<input type='checkbox' name='course' value='w'/> WORDPRESS.
+<input type='checkbox' name='course' value='p'/> PHP.
+<br><br>
+<strong><u>Choose Gender</u> </strong><br><br>
+<input type='radio' name='gend' value='Male' /> Male
+<input type='radio' name='gend' value='Female' /> Female <br><br>
+<input type='button' onclick="javascript:doCount();" name='validate' value='Validate !'/>
+</form>

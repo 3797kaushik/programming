@@ -1,0 +1,26 @@
+<style>
+textarea{font-size:20px;font-family:courier new;padding:10px;}
+</style>
+<script>
+function limitTXT(v){
+	len = v.length;
+	c = 160-len;
+	if(len>160){
+		m = v.substr(0,160);
+		document.regForm.bill.value = m;
+		c = 0;
+	}
+	document.regForm.count.value = c;
+}
+
+function doCopy(){
+	document.regForm.ship.value = document.regForm.bill.value;
+}
+</script>
+<form name='regForm'>
+<b><u>Enter Billing Details</u></b><br><br>
+<textarea onkeyup="limitTXT(this.value)" rows='6' name='bill' cols='30' ></textarea> <input type='button' name='count' value='160'/> <br><br>
+
+Enter Shipping Details, if Same as Above <b><a href='javascript:doCopy();'>Click Here</a></b><br><br>
+<textarea placeholder='Provide Shipping Details' onkeyup="limitTXT(this.value)" rows='6' name='ship' cols='30' ></textarea>
+</form>

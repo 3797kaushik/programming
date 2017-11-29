@@ -1,0 +1,55 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+    static int min(int a,int b,int c){
+        //if(a>b &&)
+        int temp=a<b?a:b;
+        return c<temp?c:temp;
+    }
+    static void printArray(int ar[]){
+        for(int i=0;i<ar.length;i++){
+            System.out.print(ar[i]+" ");
+        }
+        System.out.println();
+    }
+	public static void main (String[] args) {
+		//code
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		while(t>0){
+		int n=sc.nextInt();
+		if(n==1){
+		    System.out.println("1");
+		}
+		else{
+		    int a=2,b=3,c=5,i2=0,i3=0,i5=0;
+		    int ar[]=new int[n];
+		    ar[0]=1;
+		    for(int i=1;i<n;i++){
+		        int temp=min(a,b,c);
+		        ar[i]=temp;
+		        
+		       /* printArray(ar);
+		        System.out.println(i2);*/
+		        if(a==temp){
+		            i2++;
+		            a=ar[i2]*2;
+		        }
+		        if(b==temp){
+		            i3++;
+		            b=ar[i3]*3;
+		        }
+		        if(c==temp){
+		            i5++;
+		            c=ar[i5]*5;
+		        }
+		    }
+		    
+		    System.out.println(ar[n-1]);
+		}
+		t--;
+		}
+	}
+}

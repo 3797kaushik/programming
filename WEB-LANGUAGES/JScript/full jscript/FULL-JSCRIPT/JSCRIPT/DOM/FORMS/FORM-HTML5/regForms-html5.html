@@ -1,0 +1,61 @@
+<html>
+<head>
+<link href='style.css' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+<form name='regForm'>
+<table align='center' border='1' width='70%' cellpadding='6' cellspacing='0'>
+<thead>
+<tr><th colspan='2'>New User Please Register</th></tr>
+</thead>
+<tbody>
+<tr><td width='32%'><label for='regFname'>Enter Name</label></td><td>
+<input title='Min 2 Char' required pattern="[a-zA-Z .']{2,30}" type='text' name='fname' value='' id='regFname'/>
+</td></tr>
+<tr><td>Enter Email</td><td>
+<input type='email' required  name='email' id='regEmail' value=''/>
+</td></tr>
+<tr><td>Enter DOB</td><td>
+<input type='text' name='dob' placeholder='YYYY-MM-DD' required pattern="(19|20)?[0-9]{2}[- -.](0?[1-9]|1[012])[- -.](0?[1-9]|[12][0-9]|3[01])" id='regDob'/>
+</td></tr>
+<tr><td>Enter Password</td><td>
+<input type='password' name='pwd' value='' id='regPwd'/>
+</td></tr>
+<tr><td>Confirm Password</td><td>
+<input type='password' name='cpwd' id='regCpwd'/>
+</td></tr>
+<tr><td>Choose Gender</td><td>
+<input REQUIRED type='radio' value='Male' id='regGendm' name='gend'/> <label for='regGendm'>Male</label>
+<input type='radio' value='Female' id='regGendf' name='gend'/> <label for='regGendf'>Female</label>
+</td></tr>
+<tr><td>Choose Lanugage</td><td>
+<input type='checkbox' name='lang[]' id='regLange' value='English' required /> Eng
+<input type='checkbox' name='lang[]' id='regLangh' value='Hindi' required/> Hin
+<input type='checkbox' name='lang[]' id='regLangt' value='Telugu'/> <label for='regLangt'>Tel</label>
+</td></tr>
+<tr><td>Choose Country</td><td>
+<select name='coun' id='regCoun'>
+<option value=''>Please Select</option>
+<option value='IN' selected >INDIA</option>
+<option value='US'>UNITED STATES</option>
+<option value='UK'>UNITED KINGDOM</option>
+</select>
+</td></tr>
+<tr><td>Address</td><td>
+<textarea name='addr' id='regAddr' rows='5' cols='25'>
+</textarea>
+</td></tr>
+<tr><td>Upload Image</td><td>
+<input type='file' accept="image/x-png, image/gif, image/jpeg" required name='pic' id='regPic'/>
+</td></tr>
+</tbody>
+<tfoot>
+<tr><td colspan='2' align='right'>
+<input type='submit' value='Register !' name='submit'/>
+<input type='reset' value='Refresh !' name='can'/>
+</td></tr>
+</tfoot>
+</table>
+</form>
+</body>
+</html>

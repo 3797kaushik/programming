@@ -1,0 +1,84 @@
+
+
+Transition Property : 
+
+
+transition-property 
+transition-duration 
+transition-timing-function
+transition-delay
+
+transition-property : all ; (All Keywords would target any property of the element that changes)
+
+transition-duration : .5s;
+transition-duration : .5s, 1s; 
+Defines the Length of the animation in seconds,
+Multiple values can be passed if you are targeting multiple properties;
+
+transition-timing-function : easy-in;
+Defines the pacing of the animation within the defined duration;
+
+Transition-timing-keywords : 
+Linear: animates at a constant speed.
+ease : starts fast and then slows
+ease-in : animates speeds over time.
+ease-out : animates slow over time.
+ease-in-out : speeds up then slows down.
+
+
+
+transition-delay : 1s;
+Delays the start of the animation by the specified amount of time.
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+div#thumbview img{
+width:180px;
+height:110px;
+cursor:pointer;
+margin:0px 5px;
+-moz-transition-property:transform;
+-webkit-transition-property:transform;
+transition-property:transform;
+-moz-transition-duration:1s;
+-webkit-transition-duration:1s;
+transition-duration:1s;
+}
+div#thumbview img:hover{
+-moz-transform:scale(1.30);
+-moz-transform-origin:center top;
+-webkit-transform:scale(1.30);
+-webkit-transform-origin:center top;
+transform:scale(1.30);
+transform-origin:center top;
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+div#thumbview img{
+width:180px;
+height:110px;
+cursor:pointer;
+margin:0px 5px;
+// Short hand Notation........
+-moz-transition:all 1s;
+-webkit-transition:all 1s;
+transition:all 1s;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+div#thumbview img{
+width:180px;
+height:110px;
+cursor:pointer;
+margin:0px 5px;
+// Short hand Notation........
+-moz-transition:all 1.5s ease;
+-webkit-transition:all 1.5s ease;
+transition:all 1.5s ease;
+}
+
+

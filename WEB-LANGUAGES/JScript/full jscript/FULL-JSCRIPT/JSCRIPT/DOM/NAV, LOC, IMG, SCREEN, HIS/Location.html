@@ -1,0 +1,19 @@
+<style>
+input,img{cursor:pointer;}
+</style>
+<script>
+	function r(txt){
+		document.write(txt+'<br>');
+	}
+r("<h2 style='color:red;text-align:center;border-bottom:3px dashed red;'>Location Page Concepts</h2>");	
+</script>
+<input type='button' name='refresh' value='Reload' onclick="location.reload();"/>
+<input type='button' name='print' value='Print the Page' onclick="window.print();"/>
+<img src='printButton.png' onclick="window.print();"/>
+<input type='button' name='redirect' value='Google !' onclick="location.replace('http://www.google.com');"/>
+
+<input type='button' name='redirect' value='Facebook !' onclick="location.href='http://www.facebook.com';"/>
+<hr>
+<input type='button' name='goBack' value='Go Back' onclick="history.back();"/>
+<input type='button' name='goBack' value='Go Previous' onclick="history.go(-1);"/>
+<input type='button' name='Images' value='IMAGES HREF' onclick="location.href='Images.html';"/>

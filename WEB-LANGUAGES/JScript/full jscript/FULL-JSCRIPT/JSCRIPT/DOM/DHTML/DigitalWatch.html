@@ -1,0 +1,16 @@
+<script type='text/javascript'>
+function showWatch(){
+	today = new Date();
+	w = today.getDate();
+	w += "-"+ (today.getMonth()+1);
+	w += "-" + today.getFullYear();
+	w += " " + today.getHours();
+	w += ":" + today.getMinutes();
+	w += ":" + today.getSeconds();
+	document.getElementById('watch').innerHTML= w;
+}
+</script>
+<div id='watch'>.</div>
+<script type='text/javascript'>
+setInterval("showWatch()", 1000);
+</script>

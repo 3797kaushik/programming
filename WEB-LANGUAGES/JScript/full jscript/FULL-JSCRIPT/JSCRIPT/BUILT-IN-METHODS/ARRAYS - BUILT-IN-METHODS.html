@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>ARRAYS - BUILT-IN-METHODS in JScript</title>
+<link href='../style.css' type='text/css' rel='stylesheet'/>
+</head>
+<body>
+<h1>Join('Arg') Method in JScript</h1><div>
+<script>
+var a = new Array('This','is','My','New','Car');
+document.write('Original Array = '+a+'<br>');
+
+a = a.join(' ');
+document.write('After Join Method = '+a+'<hr>');
+
+var b = new Array(75,87,58,48,68,45);
+document.write('Original Array = '+b+'<br>');
+b = b.join('+');
+document.write('After Join Method = '+eval(b)+'<br>');
+
+document.write('</div><h1>Concat Method in JScript</h1><div>');
+var a = new Array(10,20,30);
+var b = new Array(40,50);
+var c = new Array('Raj','Ram','Ravi');
+document.write('Original Array = '+c+'<br>');
+document.write('Join 2 Array = '+a.concat(b)+'<br>');
+d = c.concat(a.concat(b));
+document.write('Join 3 Array = '+d+'<br>');
+
+
+document.write('</div><h1>Sort Method in JScript</h1><div>');
+var a = new Array('Raj','Anil','Ram','Sunil','Raju','Ravi','Rahul');
+document.write('Original Array = '+a+'<br>');
+b = a.sort();
+document.write('<b>Sort Var USED</b> = '+b+'<br>');
+document.write('Original Array = '+a+'<br>');
+
+document.write('</div><h1>Reverse Method in JScript</h1><div>');
+
+b = new Array('Raj','Anil','Ram','Sunil','Raju','Ravi','Rahul');
+document.write('Original Array = '+b+'<br>');
+b = b.reverse();
+document.write('<b>After Reverse</b> = '+b+'<hr>');
+
+a = a.reverse();
+document.write('<b>Ordered Reverse</b> = '+a+'<br>');
+
+document.write("</div><h1>Unshift(' Args ') Method in JScript</h1><div>");
+a = new Array(10,20,'Raj');
+document.write('Original Array = '+a+'<br>');
+b = a.unshift(2,5);
+document.write('<b>After Unshift</b> = '+a+'<br>');
+document.write('<b>Variable Used for Unshift</b> = '+b+'<br>');
+
+
+document.write("</div><h1>Shift() Method in JScript</h1><div>");
+document.write('Original Array = '+a+'<br>');
+c = a.shift();
+document.write('<b>After Shift</b> = '+a+'<br>');
+document.write('<b>Variable Used for Shift</b> = '+c+'<br>');
+
+document.write("</div><h1>Push( 'Args' ) Method in JScript</h1><div>");
+document.write('Original Array = '+a+'<br>');
+d = a.push('Ram','Raju');
+document.write('<b>After PUSH</b> = '+a+'<br>');
+document.write('<b>Variable Used for PUSH</b> = '+d+'<br>');
+
+document.write("</div><h1>Pop Method in JScript</h1><div>");
+document.write('Original Array = '+a+'<br>');
+e = a.pop();
+document.write('<b>After POP</b> = '+a+'<br>');
+document.write('<b>Variable Used for POP</b> = '+e+'<br>');
+</script>
+</body>
+</html>
+<pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>

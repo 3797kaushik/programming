@@ -1,0 +1,16 @@
+<style>
+#dyn{font-size:16px;font-weight:900;color:red;font-family:courier new;}
+</style>
+<script>
+function doUpper(v){
+	len = v.length;
+	if(len<2){
+		document.getElementById('dyn').innerHTML = "Min 2 Char Required";
+	} else {
+		document.getElementById('dyn').innerHTML = "";
+	}
+}
+</script>
+<form name='regForm'>
+Enter Name : <input type='text' name='fname' value='' id='regFname' placeholder='Only Upper Case' onkeyup="javascript:doUpper(this.value)"/> <span id='dyn'></span><br><br>
+</form>

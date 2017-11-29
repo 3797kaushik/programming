@@ -1,0 +1,78 @@
+CREATE TABLE brands(
+Id TINYINT(2) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+Name VARCHAR(50) NOT NULL
+);
+
+INSERT INTO brands(Name) VALUES ('Nike'),('Samsung'),('Reebok'),('Nokia'),('Dell'),('Toshiba');
+
+CREATE TABLE categories(
+Id TINYINT(2) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+Name VARCHAR(50) NOT NULL
+);
+
+INSERT INTO categories(Name) VALUES ('Mobiles'),('Laptops'),('Shoes'),('T-Shirts'),('Electronics'),('DVDs & Movies');
+
+CREATE TABLE products(
+Id SMALLINT(5) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+Name VARCHAR(50) NOT NULL,
+Price DECIMAL(10,2) NOT NULL,
+Description MEDIUMTEXT NOT NULL,
+Stock ENUM('Available','Not Available') NOT NULL,
+AddedOn TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+cId TINYINT(2) UNSIGNED NOT NULL,
+bId TINYINT(2) UNSIGNED NOT NULL
+);
+
+INSERT INTO products(Name,Price,Description,Stock,cId,bId) VALUES ('Men Solid Black Tshirt',985.2332,'This t-shirt from nike for men is for the man of sport who prefers a basic and comfy style while training. The dri-fit technology wicks sweat away from your body to ensure maximum comfort while on the field. Wear this with denims, a tee and casual shoes, or with track pants and sport shoes.','Available',4,1);
+
+INSERT INTO products(Name,Price,Description,Stock,cId,bId) VALUES ('Galaxy S3',27500.235,'1 year manufacturer warranty for Phone and 6 months warranty for in the box accessories Samsung India Warranty and Free Transit Insurance. ','Available',1,2);
+
+INSERT INTO products(Name,Price,Description,Stock,cId,bId) VALUES ('Vostro 2520 Laptop',33280.234,'Excellent laptop. A little on the heavy side. But feels very sturdy especially with the rugged plastic cladding on the top cover. This cladding also prevents the top cover from getting scratches which I highly appreciate about this laptop.','Available',2,5);
+
+INSERT INTO products(Name,Price,Description,Stock,cId,bId) VALUES ('HORIZON Sports Shoes', 2699.234,'Enjoy your training sessions in these Reebok Lite Horizon shoes and experience comfort like never before. Ultra-light and super-comfortable, these shoes are designed with padding around the mouth and inner to give maximum support and protection to your feet.','Available',3,3);
+
+INSERT INTO products(Name,Price,Description,Stock,cId,bId) VALUES ('32F5500 LED Television', 35890.635,'Quite amazingly, the Dual Coreâ€™s faster processing speeds allow you to perform multiple tasks at the same time, such as using an app while downloading another one. It also enables faster web browsing while playing apps or TV programs that youâ€™ve recently opened through the Recent History feature.','Available',5,2);
+
+INSERT INTO products(Name,Price,Description,Stock,cId,bId) VALUES ('Lumia 920 Red', 30999.768,'The Nokia Lumia 920 is a flagship, premium handset with standout industrial design and has wireless charging capabilities. ','Available',1,4);
+
+-----------------------------------------------
+
+
+
+SELECT * FROM products;
+
+SELECT * FROM products,categories;
+
+SELECT * FROM products,categories,brands;
+
+SELECT Name,Price FROM products;
+
+SELECT c.Name,p.Name,Price FROM products p,categories c;
+
+SELECT c.Name Category,p.Name Products,Price FROM products p,categories c;
+
+SELECT c.Name Category,p.Name Products,Price FROM products p,categories c WHERE cId = c.Id;
+
+
+SELECT c.Name Category,b.Name Brands,p.Name Products,Price,AddedOn FROM products p,categories c,brands b WHERE cId = c.Id AND bId = b.Id;
+
+
+------------------- LEFT JOIN -------------
+
+SELECT c.Name Category,p.Name Products,Price FROM products p LEFT JOIN categories c ON cId = c.Id;
+
+SELECT c.Name Category,b.Name Brands,p.Name Products,Price,AddedOn FROM products p LEFT JOIN categories c ON cId = c.Id LEFT JOIN brands b ON bId = b.Id;
+
+
+------------------- RIGHT JOIN -------------
+
+SELECT c.Name Category,p.Name Products,Price FROM products p RIGHT JOIN categories c ON cId = c.Id;
+
+
+SELECT c.Name Category,b.Name Brands,p.Name Products,Price,AddedOn FROM products p RIGHT JOIN categories c ON cId = c.Id RIGHT JOIN brands b ON bId = b.Id;
+
+
+SELECT c.Name Category,b.Name Brands,p.Name Products,Price,AddedOn FROM products p RIGHT JOIN categories c ON cId = c.Id RIGHT JOIN brands b ON bId = b.Id ORDER BY Price DESC;
+
+
+SELECT c.Name Category,UPPER(b.Name) Brands,p.Name Products,Price,AddedOn FROM products p RIGHT JOIN categories c ON cId = c.Id RIGHT JOIN brands b ON bId = b.Id ORDER BY Price DESC;

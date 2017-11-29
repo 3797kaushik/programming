@@ -1,0 +1,12 @@
+h1{
+//font-family:script;
+font-family: 'Montez', cursive;
+font-size:38px;
+color:#FF0000;
+letter-spacing:8px;
+font-weight:bold;
+margin-bottom:40px auto;
+border-bottom:3px dashed #FF0000;
+}
+
+div{letter-spacing:3px;font-size:22px;margin-left:50px;}

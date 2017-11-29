@@ -1,0 +1,10 @@
+table tr th{
+background:silver;
+font-size:24px;
+font-family:courier new;
+letter-spacing:3px;
+}
+table tr td,input,select,textarea{
+font-family:arial;
+font-size:22px;
+}

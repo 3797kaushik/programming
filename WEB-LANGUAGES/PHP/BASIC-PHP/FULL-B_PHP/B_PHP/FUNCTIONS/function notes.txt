@@ -1,0 +1,42 @@
+A Function are Case Insensitive
+A Function once Declared Cannot be redeclared in the program
+
+	function <fun name>(Arg){
+		||code;
+		return Value;
+	}
+There are mainly 8 kind of function in PHP,Among them..
+1)	Conditional Function :
+	A function which is enclosed inside Condition is considered as conditional Function.
+	
+2)	Variable Function :
+	When a function name is stored in a variable, variable can be used for executing the function in place of function's name
+	
+3)	Function's Function :
+	A function defined inside another function is considered as function's function
+
+4)	Function With Argument :
+	A function can be defined with one or more Arguments, if an argument is not passed though it is defined it creats a WARNING Error in the program.
+
+5)	Default Argument to a Function :
+	A function at the time of declaration if argument are assigned with some value, they will be treated as Optional or default argument of a function, and they can be passed with value or can be left without passing the value.works only at the right side..Default argument must be passed last in the program at the  argument list.
+	
+6)	Overloaded Argument:
+	A Function when passed with Parameters more than the defined argument, they are still accessable inside the function using various predefined function..
+	a)	func_num_args():
+		Returns the total number of argument as Length which are passed to the  function.
+	b)	func_get_arg(Position):
+		Returns the Argument Value at the Specified Position.
+	c)	func_get_Args():
+		Returns an array with all the arguments to the function.
+	
+7)	Function with  Return Value :
+	Return key word can stop the execution of the function , return keyword can be optionally followed with a value which will be returned where ever a function is valid..
+		More than one value cannot be passed after the return statement..
+		(Multiple values cannot be clubed as array or object & cannot be returned where the funcion is called)
+		
+8)	a)Argument Passed by Resource:
+	When an argument is passed by Resource any change for the value inside the function Will be reflected in the variable outside of the function..
+	b)Argument Passed by Reference :
+	When an argument is passed by reference any change for the value inside Wont be reflected to the variable outside the function also..
+	

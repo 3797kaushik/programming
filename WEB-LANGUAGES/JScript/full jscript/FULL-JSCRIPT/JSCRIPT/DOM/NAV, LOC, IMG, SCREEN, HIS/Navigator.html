@@ -1,0 +1,17 @@
+<style>
+input{cursor:pointer;}
+</style>
+<script>
+	function r(txt){
+		document.write(txt+'<br>');
+	}
+r("<h2 style='color:red;text-align:center;border-bottom:3px dashed red;'>Navigator Page Concepts</h2>");	
+r('Useragent = '+window.navigator.userAgent);
+r('Application Version = '+navigator.appVersion);
+r('Application Name = '+navigator.appName);
+</script>
+<body>
+<hr>
+<input type='button' name='loc' value='Location REPLACE' onclick="location.replace('Location.html');"/>
+<input type='button' name='loc' value='Location HREF' onclick="location.href='Location.html';"/>
+</body>
