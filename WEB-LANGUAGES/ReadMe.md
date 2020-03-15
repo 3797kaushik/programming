@@ -1,4 +1,5 @@
-<b> HTML topics</b>
+## HTML topics
+
 Introduction to HTML
 Structure of HTML Document
 What is Tag & Attributes?
