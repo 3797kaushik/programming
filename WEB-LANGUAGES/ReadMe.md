@@ -1,19 +1,21 @@
 ## HTML topics
 
-Introduction to HTML
-Structure of HTML Document
-What is Tag & Attributes?
-Basic HTML Tags
-Working with Tables
-Working with Form Elements
-Working with Images
-Working with List
-Order List
-Un Order List
-Working with Frames
-Working with CSS
-Inline
-Internal
-External
-Difference b/w HTML / XHTML
-About W3c Org / Validation
+Introduction to HTML <br />
+Structure of HTML Document<br />
+What is Tag & Attributes?<br />
+Basic HTML Tags<br />
+Working with Tables<br />
+Working with Form Elements<br />
+Working with Images<br />
+Working with List<br />
+Order List<br />
+Un Order List<br />
+Working with Frames<br />
+Working with CSS<br />
+Inline<br />
+Internal<br />
+External<br />
+Difference b/w HTML / XHTML<br />
+About W3c Org / Validation<br />
+
+
